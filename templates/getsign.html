@@ -1,0 +1,83 @@
+{% extends 'layout.html' %} {% block titleblock %} Home | SLCT {% endblock %}
+{%block bodyblock%}
+<section class="sign-div">
+    <div class="btn-container">
+        <div id="get-sign-heading-txt">
+            <h3>Get Sign</h3>
+        </div>
+        <div id="upload-img-txt">
+            <p>To upload the image click on below button</p>
+            <input type="file" id="image-input" accept="image/*" style="display: none;">
+        </div>
+        <div class="upload-img">
+            <button class="upload-img-button" >Upload Image</button>
+        </div>
+        <div id="get-sign-txt">
+            <p>To get the sign for the image click on below button</p>
+        </div>
+        <div class="get-sign">
+            <button class="get-sign-button" >Get Sign</button>
+        </div>
+    </div>
+    <div class="img-sign-container">
+            <div class="image-container1" style="display: none;">
+                <h4>Uploaded Image:</h4>
+                <img id="uploaded-image" src="#" alt="Uploaded Image" style="max-width: 300px;">
+            </div>
+            <div class="prediction-container" style="display: none;">
+                <h4>Predicted Label:</h4>
+                <p id="predicted-label"></p>
+            </div>
+        </div>    
+    </div>
+</section>
+
+<script>
+
+    $(document).ready(function () {
+        $(".upload-img-button").on("click", function () {
+            $("#image-input").click();
+        });
+
+        $("#image-input").on("change", function (event) {
+            var file = event.target.files[0];
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $("#uploaded-image").attr("src", e.target.result);
+                    $(".image-container1").show();
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        $(".get-sign-button").on("click", function () {
+            var file = $("#image-input")[0].files[0];
+            if (!file) {
+                alert("Please upload an image first.");
+                return;
+            }
+
+            var formData = new FormData();
+            formData.append("image", file);
+
+            $.ajax({
+                method: "POST",
+                url: "/predict_sign",
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function (response) {
+                    $("#predicted-label").text(response.predicted_label);
+                    $(".prediction-container").show();
+                },
+                error: function (err) {
+                    console.error("Error predicting sign:", err);
+                },
+            });
+        });
+    });
+
+</script>
+  
+{% endblock %}

@@ -1,0 +1,189 @@
+{% extends 'layout.html' %} {% block titleblock %} Home | SLCT {% endblock %}
+{%block bodyblock%}
+<div id="mySidenav" class="sidenav">
+  <a href="#home" id="home-sec"> Home </a>
+  <a href="#about" id="about-sec"> About Us </a>
+  <a href="#contact" id="contacts-sec"> Contacts </a>
+</div>
+
+<div class="sec-div-home">
+  <section id="home">
+    <div class="home-page">
+      <div class="image-container">
+        <img
+          src="{{url_for('static',filename='img/img5.png')}}"
+          alt="Background Image"
+        />
+      </div>
+      <div class="blue-bg">
+        <!-- This the blue background color-->
+      </div>
+      <div class="content">
+        <div class="image-right">
+          <img
+            id="img1"
+            src="{{url_for('static',filename='img/img11.png')}}"
+            alt="Image 1"
+          />
+          <img
+            id="img2"
+            src="{{url_for('static',filename='img/img33.png')}}"
+            alt="Image 2"
+          />
+          <img
+            id="img3"
+            src="{{url_for('static',filename='img/img11.png')}}"
+            alt="Image 3"
+          />
+        </div>
+        <div class="text-content">
+          <h1>SLCT - Sign Language Classification and Translation</h1>
+        </div>
+        <div class="home-tagline">
+          <span>
+            Empowering the Deaf Community with Sign Language Solutions
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div id="about-page">
+      <div class="about-text">
+        <div id="text">
+          <h3>About SLCT</h3>
+          <div id="slct-text">
+            <p class="slct-text2">
+              <span>
+                SLCT is passionate about empowering the deaf and those with
+                hearing challenges by providing innovative solutions for sign
+                language translation. Our commitment to accessibility and
+                inclusivity drives us to deliver exceptional services that
+                facilitate seamless communication through sign language.
+              </span>
+            </p>
+          </div>
+          <div class="learn-more">
+            <a class="learn-more-button" href="aboutus">Learn More</a>
+          </div>
+        </div>
+
+        <div class="blue-bg">
+          <!-- This the  background color-->
+        </div>
+
+        <div class="bg-img">
+          <img
+            id="bg-img2"
+            src="{{url_for('static',filename='img/img33.png')}}"
+            alt="Image 2"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div id="contact-header">
+      <div class="status1" id="status">{{msg}}</div>
+      <div id="contact-header-txt">
+        <h1>Contact Us</h1>
+      </div>
+      <div id="contact-main">
+        <section class="contact-info">
+          <div id="contact-us-main">
+            <div id="contact-info-h2">
+              <h2>Contact Information</h2>
+            </div>
+            <div id="contact-info-elements">
+              <ul>
+                <li><strong>Email:</strong> slct2024@gmail.com</li>
+                <li><strong>Phone:</strong> 8974589632</li>
+                <li>
+                  <strong>Address:</strong> 123 Main Street, City, Country
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="contact-form">
+          <div id="contact-form-main">
+            <div id="contact-form-h2">
+              <h2>Send us a message</h2>
+            </div>
+            <div id="contact-form-elements">
+              <form id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required />
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required />
+
+                <label for="message">Message:</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                ></textarea>
+
+                <button type="submit" id="sendButton">Send</button>
+              </form>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $("#contactForm").on("submit", function (e) {
+      e.preventDefault();
+
+      var name = $("#name").val();
+      var email = $("#email").val();
+      var message = $("#message").val();
+
+      if (name != "" && email != "" && message != "") {
+        $.ajax({
+          method: "POST",
+          url: "/submit_form",
+          contentType: "application/json;charset=UTF-8",
+          data: JSON.stringify({ name: name, email: email, message: message }),
+          dataType: "json",
+          success: function (data) {
+            $("#status").html(
+              '<span style="color: rgb(13, 97, 13); font-weight: bold;">Your response stored successfully!!</span>'
+            );
+            $("#contactForm")[0].reset();
+          },
+          statusCode: {
+            400: function () {
+              $("#status").html(
+                '<span style="color: red;">Bad request parameters!</span>'
+              );
+            },
+            500: function () {
+              $("#status").html(
+                '<span style="color: red;">Internal Server Error!</span>'
+              );
+            },
+          },
+          error: function (err) {
+            console.error("Error submitting form", err);
+          },
+        });
+      } else {
+        $("#status").html(
+          '<span style="color: red;">All fields are required</span>'
+        );
+      }
+    });
+  });
+</script>
+
+{% endblock %}
