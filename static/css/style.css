@@ -1,0 +1,843 @@
+/* header  */
+header {
+  background-color: #f0f0f0; /* Transparent black */
+    color: #4b4747;
+    padding: 10px 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    padding-right: 150px;
+    margin-right: 100px;
+    bottom: auto;
+    z-index: 1000;
+}
+
+.navbar li {
+  margin-left: 20px;
+}
+
+.navbar li a {
+  color: rgb(52, 69, 119);
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 20px;
+  font-family: 'Linotype Didot Pro Roman';
+  
+}
+
+.navbar li a:hover {
+  color: #24c4d9;
+}
+
+.container {
+  margin-right: 0px;
+  padding-right: 50px;
+  text-align: center;
+}
+.navbar {
+  display: flex;
+  justify-content: right;
+  padding-right: 20px; /* Add some padding to the right */
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  
+}
+.navbar-contaier {
+  display: flex;
+  max-width: 100%;
+  margin: 0 0;
+  padding: 0 20px;
+  
+}
+
+.logo {
+  flex: 1;
+  justify-content: left;
+  opacity: 1;
+  width: 80px;
+  margin-top: 0px;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  border-radius: 50%;
+  max-height: 30px;
+  background: transparent no-repeat center center;
+}
+
+/* Media query for responsive design */
+@media screen and (max-width: 768px) {
+  .navbar {
+      flex-direction: column; /* Align navbar items vertically */
+      position: static; /* Remove fixed position */
+      background-color: rgba(0, 0, 0, 0.5); /* Transparent black */
+      padding: 10px 0;
+      text-align: center; /* Center align navbar items */
+  }
+
+  .navbar a {
+      margin: 5px 0; /* Add space between navbar items */
+  }
+}
+
+
+/* sidenav  */
+
+#mySidenav a {
+  position: absolute;
+  left: -170px;
+  transition: 0.3s;
+  padding: 15px;
+  width: 150px;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  border-radius: 5px 5px 5px 5px;
+}
+
+#mySidenav a:hover {
+  left: 0;
+}
+
+#home-sec {
+  top: 220px;
+  background-color: rgba(52, 69, 119, 1);
+}
+
+#about-sec {
+  top: 290px;
+  background-color: rgb(241, 143, 77);
+}
+
+#contacts-sec {
+  top: 360px;
+  background-color: #555;
+}
+.sidenav {
+  position: fixed;
+}
+
+.sec-div-home section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  z-index: 0;
+}
+
+#home {
+  padding: 0px;
+  margin: 0px;
+  min-width: 980px;
+  --items-direction: row;
+}
+
+.home-page {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.blue-bg {
+  flex: 0.01;
+  width: 100%;
+  height: 100%;
+  background: rgba(52, 69, 119, 1);
+}
+
+.content {
+  flex: 1;
+  padding-top: 30px;
+  padding-bottom: 320px;
+  background: linear-gradient(90deg, #e8e6e6 0%, #bec6dd 100%);
+  height: 600px;
+}
+
+.image-right {
+  padding-top: 0%;
+  display: flex;
+  justify-content: space-between;
+  background: radial-gradient(
+    circle at 50% 50%,
+    #e4ebfc 0%,
+    #589be3 32.48291015625%,
+    #002f5e 62.78076171875%,
+    #414141 100%
+  );
+  height: 100px;
+  align-items: center;
+}
+
+#img1 {
+  float: left;
+  height: 80px;
+  background-color: transparent;
+  padding-left: 50px;
+}
+
+#img2 {
+  margin: 0 auto;
+  height: 80px;
+}
+
+#img3 {
+  float: right;
+  height: 80px;
+  padding-right: 50px;
+}
+
+.text-content {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.text-content h1 {
+  font-size: 95px;
+  color: rgb(241, 143, 77);
+  margin: 0;
+  padding-left: 150px;
+  padding-right: 150px;
+  line-height: 1;
+}
+
+.home-tagline {
+  letter-spacing: normal;
+  color: rgb(52, 69, 119);
+  text-align: center;
+  padding-top: 60px;
+  padding-left: 150px;
+  padding-right: 150px;
+  display: flex;
+  justify-content: center;
+  height: 20px;
+}
+.home-tagline span {
+  flex: 0.8;
+  font-family: "Linotype Didot Pro", serif;
+  text-align: left;
+  font-size: 25px;
+}
+
+#about {
+  padding: 0px;
+  margin: 0px;
+ 
+  padding-left: 15px;
+}
+
+#about-page {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  padding: 0px;
+  margin: 0px;
+  
+}
+
+.about-text {
+  display: flex;
+  padding-top: 5px;
+}
+.about-text #text {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 100px;
+  height: 800px;
+  background: rgba(52, 69, 119, 1);
+}
+
+.about-text #text h3 {
+  flex: 1;
+  font-size: 65px;
+  color: rgba(251, 168, 113, 1);
+  margin: 0;
+  padding-left: 150px;
+  padding-right: 150px;
+  line-height: 1;
+  padding-top: 40px;
+  text-decoration: underline;
+  text-decoration-skip-ink: none; 
+  
+}
+
+#slct-text {
+  display: flex;
+  padding-top: 90px;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.slct-text2 {
+  flex: 6;
+  font-family: 'Linotype Didot Pro Roman', serif;
+  font-size: 30px;
+  color: rgb(251, 249, 248);
+  margin: 0;
+  padding-left: 170px;
+  padding-right: 170px;
+  line-height: 1.7;
+  text-align: left;
+  justify-content:  center;
+}
+
+.learn-more {
+  padding-top: 50px;
+}
+.learn-more-button {
+  padding: 10px 20px;
+  font-family: "Linotype Didot Pro Roman";
+  font-size: 17px;
+  background-color: #9bc4ee;
+  color: #0d0d0d; 
+  text-decoration: none; 
+  border-radius: 25px; 
+  transition: background-color 0.3s ease; 
+  align-items: center;
+  box-sizing: border-box;
+  display: inline;
+  flex: 1;
+  justify-content: right;
+  min-width: 10%;
+  text-align: initial;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.learn-more-button:hover {
+  background-color: rgb(25, 184, 220); 
+  color: #0d0d0d;
+}
+
+.bg-img #bg-img2 {
+  margin: 0 auto;
+
+}
+
+#about-page .blue-bg {
+  flex: 0.01;
+  width: 100%;
+  height: 100%;
+  background: rgba(52, 69, 119, 1);
+}
+
+#about2 {
+  padding: 0px;
+  margin: 0px;
+  padding-left: 15px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+#about-page2 {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  padding: 0px;
+  margin: 0px;
+  
+}
+
+.about-text2 {
+  flex: 1;
+  padding-top: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-text2 #service-id h1 {
+  /*display: flex;*/
+  flex: 1;
+  justify-content: center;
+  text-align: center;
+  font-size: 55px;
+  font-family: "Linotype Didot Std Roman";
+  color: rgb(78, 40, 158);
+
+  text-decoration-skip-ink: none;
+  position: relative;
+  display: inline-block;
+}
+
+.about-text2 #service-id h1::after{
+  content: '';
+  position: absolute;
+  /*left: 0;
+  bottom: -4px; 
+  width: 50%; 
+  height: 2px; */
+  background-color: rgba(58, 67, 128, 1);
+  left: 50%; 
+  transform: translateX(-50%); 
+  bottom: 0; 
+  width: 30%; 
+  height: 1px; 
+}
+
+
+#service-id {
+  display: flex;
+  flex: 1;
+  padding-top: 5px;
+  justify-content: left;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+#heading-txt {
+  display: flex;
+  flex: 1;
+  padding-top: 5px;
+  justify-content: left;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+#service-img11 {
+  display: flex;
+  flex: 1;
+  padding-top: 5px;
+  justify-content: left;
+  align-items: left;
+  height: 20%;
+  padding-left: 150px;
+}
+
+#service-img22 {
+  display: flex;
+  flex: 2;
+  padding-top: 5px;
+  justify-content: left;
+  align-items: left;
+  height: 20%;
+}
+
+#service-img1-text .slc-text2 span {
+  display: flex;
+  flex: 6;
+  font-size: 22px;
+  font-family: "Linotype Didot Pro";
+  color: rgba(58, 67, 128, 1);
+  margin: 0;
+  line-height: 1;
+  padding-top: 10px;
+  line-height: 1.8em;
+}
+
+#service-img1-text {
+  margin: 0;
+  padding-left: 150px;
+  padding-right: 150px;
+  height:100px; 
+  width:300px;
+}
+
+#service-img2-text {
+  margin: 0;
+  padding-left: 0px;
+  padding-right: 20px;
+  height:100px; 
+  width: 300px;
+}
+
+#slc-txt {
+  display: flex;
+  flex: 1;
+  font-size: 30px;
+  font-family: "Linotype Didot Std Roman";
+  color: rgb(78, 40, 158);
+  margin: 0;
+  text-align: left;
+  font-weight: bold;
+  line-height: 1;
+  padding-top: 60px;
+
+}
+
+#slt-txt {
+  display: flex;
+  flex: 1;
+  font-size: 30px;
+  font-family: "Linotype Didot Std Roman";
+  color: rgb(78, 40, 158);
+  margin: 0;
+  text-align: left;
+  font-weight: bold;
+  line-height: 1;
+  padding-top: 60px;
+  justify-content: center;
+}
+#service-img2-text .slt-text2 span {
+  display: flex;
+  flex: 6;
+  font-size: 22px;
+  font-family: "Linotype Didot Pro";
+  color: rgba(58, 67, 128, 1);
+  margin: 0;
+  line-height: 1;
+  padding-top: 10px;
+  padding-left: 0px;
+  padding-right: 10px;
+  line-height: 1.8em;
+
+}
+
+/*----- Contact Us -----*/
+
+#contact {
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  padding-left: 15px;
+  background-color: #bec6dd;
+  padding-bottom: 0%;
+}
+
+#contact-header #status{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: red;
+  font-size: 18px;
+  font-family: 'Linotype Didot Pro Roman';
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#contact-header .status1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: red;
+  font-size: 18px;
+  font-family: 'Linotype Didot Pro Roman';
+}
+
+#contact-header {
+  padding-top: 100PX;
+  justify-content: center;
+  align-items: center;
+
+}
+
+#contact-header-txt {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  height: 10px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 22px;
+}
+
+#contact-main {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  padding-bottom: 0%;
+}
+
+#contact-us-main {
+  padding: 20px;
+ 
+}
+
+#contact-form-main {
+  padding: 20px;
+
+}
+
+
+
+#contact-info-h2{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  font-size: 20px;
+}
+
+#contact-form-h2{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  font-size: 20px;
+}
+
+#contact-info-h2 h2,
+#contact-form-h2 h2 {
+    color: #333;
+}
+
+#contact-info-elements{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 50px;
+  margin-top: 0px;
+
+}
+
+#contact-info-elements ul {
+    list-style: none;
+    padding: 0;
+    flex: 1;
+}
+
+.contact-info li {
+  margin-bottom: 10px;
+  font-family: 'Linotype Didot Pro Roman';
+  font-size: 16PX;
+}
+
+#contact-info-elements li strong {
+  font-family: 'Linotype Didot Std';
+  font-size: 18px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.contact-form label {
+    margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#contact-form-elements{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Linotype Didot Pro';
+  font-size: 18px;
+}
+
+#contact-form-elements button {
+    padding: 10px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+#contact-img {
+  width: 40%; 
+  height: 400px; 
+  padding-left: 600px;
+  align-items: center; 
+  display: flex; 
+  flex: 1; 
+  justify-content: center;
+}
+
+/*----- Get Sign -----*/
+.sign-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*background: linear-gradient(90deg, 
+    #bec6dd 0%,
+    #bec6dd 32.48291015625%,
+    #e8e6e6 62.78076171875%,
+    #bec6dd 100%);*/
+  background: #e4d9c7;
+  text-align: center;
+  flex-direction: row;
+}
+
+#get-sign-heading-txt{
+  flex: 1;
+  flex-direction: row;
+  justify-content: center;
+  color: rgba(201, 107, 44, 1);
+  font-size: 55px;
+}
+
+#upload-img-txt {
+  flex: 2;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+  color: rgb(52, 69, 119);
+  font-family: 'Linotype Didot Pro';
+  font-size: 19px;
+  height:  30px;
+  width: 250px;
+  padding-bottom: 50px;
+}
+
+.upload-img {
+  padding: 10px 20px;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box; 
+  display: flex;
+}
+
+.upload-img-button {
+  font-family: "Linotype Didot Pro Roman";
+  font-size: 17px;
+  background-color: #133960;
+  color: #e0e0e0; 
+  text-decoration: none; 
+  border-radius: 55px; 
+  transition: background-color 0.3s ease; 
+  text-align: center;
+  box-sizing: border-box; 
+  flex: 1;
+  min-width: 10%;
+  width: max-content;
+  height: 42px;
+}
+
+.upload-img-button:hover {
+  background-color: rgb(139, 185, 195); 
+  color: #0d0d0d;
+  font-weight: bold;
+}
+
+#get-sign-txt {
+  flex: 1;
+  flex-direction: row;
+  justify-content: center;
+  color: rgb(52, 69, 119);
+  font-family: 'Linotype Didot Pro';
+  font-size: 19px;
+  height:  30px;
+  width: 250px;
+  padding-bottom: 70px;
+  padding-top: 50px;
+}
+
+.get-sign{
+  padding: 10px 20px;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  display: flex;
+  padding-bottom: 250px;
+}
+
+.get-sign-button {
+  font-family: "Linotype Didot Pro Roman";
+  font-size: 17px;
+  background-color: #133960;
+  color: #e0e0e0; 
+  text-decoration: none; 
+  border-radius: 55px; 
+  transition: background-color 0.3s ease; 
+  text-align: center;
+  box-sizing: border-box; 
+  flex: 1;
+  min-width: 10%;
+  width: max-content;
+  height: 42px;
+}
+
+.get-sign-button:hover {
+  background-color: rgb(139, 185, 195); 
+  color: #0d0d0d;
+  font-weight: bold;
+}
+
+.img-sign-container {
+  padding-bottom: 50px;
+  font-family: "Linotype Didot Pro Roman";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 20px;
+  flex-direction: row;
+}
+
+.btn-container {
+  font-family: "Linotype Didot Pro Roman";
+  justify-content: center;
+  align-items: center;
+  padding-right: 100px;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 70px;
+}
+
+.image-container1 {
+  padding-bottom: 50px;
+  font-family: "Linotype Didot Pro Roman";
+  padding-right: 70px;
+  padding-top: 20px;
+  padding-left: 150px;
+  flex: 1;
+}
+
+.image-container1 h4 {
+  font-size: 25px;
+}
+
+.prediction-container {
+  padding-bottom: 50px;
+  font-family: "Linotype Didot Pro Roman";
+  padding-left: 100px;
+  padding-right: 0px;
+}
+
+.prediction-container h4 {
+  font-size: 25px;
+}
+
+.prediction-container p {
+  font-family: "Linotype Didot Pro";
+  font-size: 45px;
+}
+
+
+/*----- Footer -----*/
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.social-icons {
+  margin-top: 20px;
+}
+
+.social-icons .icon {
+  margin: 0 5px;
+  color: #333;
+  text-decoration: none;
+}
+
+.social-icons .icon:hover {
+  color: rgb(113, 207, 251);
+}
+
+.footer-heading {
+  font-size: 24px;
+  font-weight: bold;
+  margin-BOTTOM: 10px;
+  font-family: 'Linotype Didot Pro Roman';
+  
+}

@@ -1,0 +1,101 @@
+/* Define fonts */
+@font-face {
+    font-family: 'Linotype Didot';
+    src: url('LinotypeDidot.woff2') format('woff2'),
+         url('LinotypeDidot.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Linotype Didot Pro';
+    src: url('/font/DidotLTPro-Italic.woff2') format('woff2'),
+        url('/font/DidotLTPro-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+/* General styles */
+body {
+    margin: 0;
+    font-family: 'Linotype Didot', serif;
+    background-color: #fff;
+    color: #000;
+}
+
+/* Sidenav styles */
+#mySidenav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    width: 200px;
+    height: 100vh;
+    overflow-x: hidden;
+    transition: 0.3s;
+}
+
+#mySidenav a {
+    display: block;
+    padding: 20px;
+    color: #fff;
+    text-decoration: none;
+}
+
+#mySidenav a:hover {
+    background-color: #555;
+}
+
+/* Main content styles */
+.sec-div-home section {
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Home section styles */
+#home {
+    background-color: #f0f0f0;
+}
+
+.image-container {
+    display: none;
+}
+
+.content {
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+.home-tagline {
+    font-size: 18px;
+}
+
+/* Media queries for responsiveness */
+@media screen and (min-width: 768px) {
+    #mySidenav {
+        width: 250px;
+    }
+
+    .sec-div-home section {
+        padding: 50px;
+    }
+
+    .image-container {
+        display: block;
+        flex: 1;
+    }
+
+    .content {
+        flex: 1;
+        text-align: left;
+    }
+
+    h1 {
+        font-size: 48px;
+    }
+
+    .home-tagline {
+        font-size: 24px;
+    }
+}
